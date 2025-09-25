@@ -26,14 +26,25 @@
 
   <!-- Game Section -->
   <div id="game">
-    <!-- Put your existing Run 3 canvas/UI here -->
+    <!-- Run 3 game canvas -->
     <canvas id="canvas"></canvas>
-    <br>
-    <button onclick="logout()">Logout</button>
   </div>
 
   <!-- Scripts -->
   <script src="Run3.js"></script>
   <script src="userSystem.js"></script>
+
+  <script>
+    function showGame() {
+      // Hide login/register
+      document.getElementById("auth").style.display = "none";
+      // Show game
+      document.getElementById("game").style.display = "block";
+      // Start the Run 3 game if it needs an init
+      if (typeof Run3 !== "undefined" && typeof Run3.init === "function") {
+        Run3.init();
+      }
+    }
+  </script>
 </body>
 </html>
