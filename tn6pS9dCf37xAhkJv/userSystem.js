@@ -24,14 +24,18 @@ function register() {
 
 // --- Login ---
 function login() {
-  let user = document.getElementById("loginUser").value.trim();
-  let pass = document.getElementById("loginPass").value.trim();
+  const username = document.getElementById("loginUser").value;
+  const password = document.getElementById("loginPass").value;
 
-  let stored = localStorage.getItem("user_" + user);
-  if (!stored) {
-    alert("❌ User not found.");
-    return;
+  const user = JSON.parse(localStorage.getItem(username));
+  if (user && user.password === password) {
+    alert("Login successful!");
+    showGame(); // <--- this loads the game
+  } else {
+    alert("Invalid username or password!");
   }
+}
+
 
   let data = JSON.parse(stored);
   if (data.password !== pass) {
