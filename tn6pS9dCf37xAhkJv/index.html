@@ -50,6 +50,24 @@
 </head>
 <body>
 	
+	<div id="auth">
+  <h2>Register</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="register()">Register</button>
+
+  <h2>Login</h2>
+  <input type="text" id="loginUser" placeholder="Username">
+  <input type="password" id="loginPass" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="game" style="display:none;">
+  <!-- Existing Run3 canvas/UI goes here -->
+  <button onclick="logout()">Logout</button>
+</div>
+
+	
 	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
 	
 	<div id="openfl-content"></div>
@@ -60,3 +78,4 @@
 	<script src="https://cdn.jsdelivr.net/gh/st39/sdk@main/api.js"></script>
 </body>
 </html>
+
